@@ -1,0 +1,29 @@
+1. Algorithm-based Questions
+
+Sorting Algorithms (e.g., Quick Sort, Merge Sort)
+Searching Algorithms (e.g., Binary Search, Linear Search)
+Dynamic Programming (e.g., Fibonacci, Knapsack Problem)
+Greedy Algorithms (e.g., Activity Selection)
+Backtracking (e.g., N-Queens Problem)
+2. Data Structure Questions
+
+Arrays (e.g., Rotation, Merging)
+Linked Lists (e.g., Reversal, Cycle Detection)
+Stacks (e.g., Parenthesis Matching)
+Queues (e.g., Implementing with Stacks)
+Trees (e.g., Traversal, Height Calculation)
+Graphs (e.g., BFS, DFS)
+3. String Manipulation
+
+String Reversal
+Anagram Checking
+Substring Search (e.g., Rabin-Karp Algorithm)
+Palindrome Checking
+Character Counting
+4. Mathematical Problems
+
+Prime Number Generation (e.g., Sieve of Eratosthenes)
+Factorial Calculation
+Fibonacci Sequence
+GCD and LCM Calculations
+Combinatorial Problems (e.g., Pascal's Triangle)

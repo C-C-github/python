@@ -1,0 +1,36 @@
+Tree 
+
+  its non linear structure
+  its Hierarchical structure
+Types of tree
+ 1)binary tree: either zero,atleat one child or child 2 can be there
+ 2)BST(BINARY SERACH TREE):
+ 3)AVL Tree: 
+
+ https://media.geeksforgeeks.org/wp-content/uploads/20221124153129/Treedatastructure.png
+
+                    a  (root,key)
+                b        c
+            d     e    f     g
+         h    i  j  k l  m  n   o
+
+
+1)BT :
+      1)in order : (left - root- right)
+      2)pre order: (root - left - right)
+      3)post order:(left - right - root)
+2)BST : 
+    Left child should be lesser value.
+    right child should be greater value.
+3)AVL Tree (Adelson-Velsky and Landis tree):
+    balancing the heights of left and right child tree.
+    How do u balance?
+      using balance factor to balance a tree
+    Balance factor:
+      leftchild heights - rightchild heights
+    or
+      rightchild heights - leftchild heights
+    -1,0,1 its balance factor value
+    after the balncing the hts ll,lr,rr,rl rotation 
+
+      

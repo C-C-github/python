@@ -1,0 +1,19 @@
+class node:
+def __init__(Self,val):
+self.data=val
+self.next=None
+
+
+n1=node(112)
+n2=node(231)
+
+
+n1.next=n2
+n2.next(n1)
+
+
+curr=n1
+while curr.next!=n1:
+print(curr.data,end=' )
+current=curr.next
+print(curr.data) //print first one

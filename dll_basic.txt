@@ -1,0 +1,12 @@
+DOUBLE LINKED LIST
+ can move Forward and backward throught the list
+ easier to insert or delete elements from both ends
+
+APPLICATIONS:
+ web browser : navigate back and forward through history.
+ Music : play next or prev song/videos
+ undo /redo features : move b/w prev and next actions
+ lru cache :remove least recently used data efficiently
+ os : manage process and memory block
+ text : navigate b/w edit states easily
+ image vower : browse images forward and backward

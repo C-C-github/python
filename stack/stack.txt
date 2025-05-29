@@ -1,0 +1,69 @@
+Stack is  a linear data structure in which eleemts are inserted from the one end and deleted form other end
+LIFO - Last in First Out
+variables : top(always points to the top element in stack)
+Operations: push(), pop(), peek(), display()
+Examples: undo operations, browsing history, Balancing Brackets, Expression Evaluation
+
+
+Operations: 
+1. push:
+1st initialize empty stack and top to -1
+2nd if stack full print(stsck is full)
+else:
+increment stack top by one position and insert an element
+
+2. Pop:
+1st initialize top to -1 and temp variables
+2nd check wheather the stack is empty( top == -1)
+if empty: print(Stack is empty)
+else: delete the top most element and decrease top by one position
+
+3. PostFix Evaluation:
+steps
+1. Read Symbols form left to right
+2. if the symbol is a number(operand) push it to the stack
+3. if the symbol is an operator(+,-,*,/):
+    - pop two numbers from stack(operand1 and operand 2)
+    - perform the operation: operand-1 operator operand-2
+    - Push the result back to stack
+4. After reading all the symbols , pop the final value from the stack- this is result
+
+eg:
+Input : 432*+5-
+
+Scanned Symbol              Stack                               Operations
+------------------------------------------------------------------------------------------------------
+    4                       4                               push(4)
+    3                       4,3                             push(3)
+    2                       4,3,2                           push(2)
+    *                       4,6                             pop(2,3)=> 3*2 = 6 => push(6)
+    +                       10                              pop(4,6)=> 6+4 = 10 =>push(10)
+    5                       10,5                            push(5)
+    -                       5                               pop(5,10) => 10-5 => push(5)
+
+
+pop(5)
+result = 5
+
+
+5. Infix to Postfix Conversion
+
+1. Read the symbol from left to right
+2. if symbol is operand print it to result
+3. If symbol is ( push it on to stack
+4. if symbol is ) pop and print all the operators form the stack until ( is found, then discard ) 
+5. if operator is this (+,-,*,/)
+    - pop and print higher or equal precedence opers from the stack
+    -push the current oper onto the stack
+6. Aftet reading allthe symbols, pop an dprinet alll the remaining opers from the stack
+
+
+6.  Balancing Symbols
+
+1. create an empty list
+2. read the expression one character ata a time
+3. if the char is ( push it on to stack
+4. if the char is ):
+    - if the stack is empty, report "unbalanced expression" (extra)
+    - otherwise pop the stack
+5. if stack is empty return True, else return False

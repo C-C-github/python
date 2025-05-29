@@ -1,0 +1,53 @@
+LINKED LIST:
+
+    - A linked list is a linear collection of data elements,called nodes,that conatins both data and a reference to 
+       the next node in a sequence
+    Memory allocation   : Dynamic
+    Access element      : sequential
+
+
+Types :
+1) single linked list(sll)
+2) circular linked list(cll)
+3) double linked list(dll)
+
+| **Type of Linked List**  | **Real-World Use Case**                                | **Why It’s Used (Interview Point)**                                       |
+| ------------------------ | ------------------------------------------------------ | ------------------------------------------------------------------------- |
+| **Singly Linked List**   | - Implementing stacks<br>- Simple memory allocation    | - Efficient insertions/deletions at head<br>- Minimal memory usage        |
+| **Doubly Linked List**   | - Web browser (Back/Forward)<br>- Undo/Redo systems    | - Bi-directional traversal<br>- Easier deletion without full traversal    |
+| **Circular Singly List** | - Round-robin CPU scheduling<br>- Circular queues      | - No null at end<br>- Automatically loops back to start                   |
+| **Circular Doubly List** | - Multiplayer games (player turns)<br>- Music playlist | - Bi-directional cyclic navigation<br>- Efficient in continuous rotations |
+
+
+1)SLL:
+    last position:
+        1. create newnode
+        2. if head is none the
+        3. set head to point to the newnode
+        4. exit
+        5. else
+        6. set current = head
+        7. repeat step 7,8 while current.next!=none
+        8.      update current to its next
+                end loop 
+        9. set current.next to the newnode
+        10. exit
+
+    Del First position:
+        1. if head is none then
+                printlist is empty
+        2. else: set current.next
+        3. set head to current.next
+        4. delete current and exit
+    
+    Search for a element:
+        1. if head is none 
+                print list is empty
+        2. else set current=head
+        3. while current is not none
+                if current.data is equal to search_element then
+                    print(element found)
+                else if 
+                    set current to curret.next
+            end while
+        4. print "element not found"
