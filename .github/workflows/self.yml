@@ -1,0 +1,11 @@
+name: Self-Hosted Python Runner
+
+on: [push]
+
+jobs:
+  run-python:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Python File
+        run: python sll_basic.py
