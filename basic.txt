@@ -8,20 +8,20 @@ Data types:
     - array,list,stack,queue
 2. non linear 
     - 
-Data         : is raw.|EX: take a class swith board is an data|
-infromation  : is ready to use.|EX: in that fan connect to switch 3 is information|
+Data         : is raw.|EX: take a class switch board is an data|
+information  : is ready to use.|EX: in that fan connect to switch 3 is information|
 -----------------------------------------------------------------------
-class is jusst a body structure.
+class is just a body structure.
 
 object is make multiple class with color like car example.
 -----------------------------------------------------------------------
-data 6 typess
+ data 6 types
 
 1. alphabet
-    1.1 upper (A-Z) -> ASCII 65-90
-    1.2 lower (a-z) -> ASCII 97-122
+    1.1 upper (A-Z) -> ASCII 65 - 90
+    1.2 lower (a-z) -> ASCII 97 - 122
 
-2. number (0-9) ->ASCII 48 to 57
+2. number (0 - 9) ->ASCII 48 to 57
 3. symbols @#
 4. images   jpg,jpeg,png
 5. audio    mp3

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Personal Timetable</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+	<style>
+		body {
+			font-family: 'Segoe UI', sans-serif;
+			background-color: #f8fafc;
+		}
+		th {
+			background: linear-gradient(135deg, #1f2937, #374151);
+			color: white;
+		}
+		.explainable-ethical-ai {
+			background-color: #a7f3d0;
+			color: #064e3b;
+		}
+		.organizational-behaviour {
+			background-color: #bfdbfe;
+			color: #1e3a8a;
+		}
+		.empty {
+			background-color: #f9fafb;
+		}
+	</style>
+</head>
+<body>
+	<div class="max-w-5xl mx-auto p-4">
+		<h1 class="text-3xl font-bold text-center mb-6 text-gray-800">📅 My Personal Timetable</h1>
+		
+		<div class="flex justify-center gap-4 mb-4">
+			<button id="downloadPdf" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg shadow">Download PDF</button>
+			<button id="saveImage" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg shadow">Save as Image</button>
+		</div>
+
+		<div id="timetableContainer" class="bg-white rounded-lg shadow-lg p-4 overflow-x-auto">
+			<table id="timetable" class="min-w-full border border-gray-300">
+				<thead>
+					<tr>
+						<th class="p-2 border">Time</th>
+						<th class="p-2 border">Monday</th>
+						<th class="p-2 border">Tuesday</th>
+						<th class="p-2 border">Wednesday</th>
+						<th class="p-2 border">Thursday</th>
+						<th class="p-2 border">Friday</th>
+					</tr>
+				</thead>
+				<tbody id="timetableBody"></tbody>
+			</table>
+		</div>
+	</div>
+
+	<script>
+		// Timetable data
+		const timetableData = [
+			{ time: "09:00 AM", mon:"", tue:"", wed:{sub:"Explainable & Ethical AI (P)", room:"3101A-BL3-F", teacher:"Dr. Shivani Goel", cls:"explainable-ethical-ai"}, thu:{sub:"Organizational Behaviour (L)", room:"3114-BL3-FF", teacher:"Ms. P. Saritha", cls:"organizational-behaviour"}, fri:"" },
+			{ time: "10:00 AM", mon:"", tue:{sub:"Explainable & Ethical AI (L)", room:"3216-BL3-SF", teacher:"Dr. Shivani Goel", cls:"explainable-ethical-ai"}, wed:{sub:"Explainable & Ethical AI (P)", room:"3101A-BL3-FF", teacher:"Dr. Shivani Goel", cls:"explainable-ethical-ai"}, thu:{sub:"Organizational Behaviour (L)", room:"3114-BL3-FF", teacher:"Ms. P. Saritha", cls:"organizational-behaviour"}, fri:"" },
+			{ time: "02:00 PM", mon:"", tue:{sub:"Explainable & Ethical AI (L)", room:"3202-BL3-SF", teacher:"Dr. Shivani Goel", cls:"explainable-ethical-ai"}, wed:{sub:"Organizational Behaviour (L)", room:"3114-BL3-FF", teacher:"Ms. P. Saritha", cls:"organizational-behaviour"}, thu:"", fri:"" }
+		];
+
+		// Render timetable dynamically
+		const tbody=document.getElementById("timetableBody");
+		timetableData.forEach(row=>{
+			const tr=document.createElement("tr");
+			["time","mon","tue","wed","thu","fri"].forEach((day, index)=>{
+				const td=document.createElement("td");
+				td.classList.add("p-2","border","align-top");
+				if(index===0){
+					td.textContent=row[day];
+					td.classList.add("font-semibold");
+				}else{
+					if(typeof row[day]==="object"){
+						td.classList.add(row[day].cls);
+						td.innerHTML=`<div class="font-bold">${row[day].sub}</div><div class="text-sm">Room: ${row[day].room}</div><div class="text-xs italic">${row[day].teacher}</div>`;
+					}else{
+						td.classList.add("empty");
+					}
+				}
+				tr.appendChild(td);
+			});
+			tbody.appendChild(tr);
+		});
+
+		// PDF Download
+		document.getElementById("downloadPdf").addEventListener("click",()=>{
+			const element=document.getElementById("timetableContainer");
+			html2pdf().from(element).save("timetable.pdf");
+		});
+
+		// Save as Image
+		document.getElementById("saveImage").addEventListener("click",()=>{
+			html2canvas(document.getElementById("timetableContainer")).then(canvas=>{
+				const link=document.createElement("a");
+				link.download="timetable.png";
+				link.href=canvas.toDataURL();
+				link.click();
+			});
+		});
+	</script>
+</body>
+</html>
